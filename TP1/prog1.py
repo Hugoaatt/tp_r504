@@ -15,18 +15,22 @@ while True:
 
 
 import fonctions as f
+try : 
+	a = input("Entrez le premier nombre : ")
+	b = input("Entrez le second nombre : ")
+	a = float(a)
+	b = float(b)
+	res = f.puissance(a, b)
+   
+	print(f"Le résultat de {a} élevé à la puissance {b} est : {res}")
 
-a = input("Entrez le premier nombre : ")
-b = input("Entrez le second nombre : ")
-
-a = float(a)
-b = float(b)
-
-try:
-    res = f.puissance(a, b)
-    print(f"Le résultat de {a} élevé à la puissance {b} est : {res}")
 except TypeError as e:
-    print(e)
+    print(f"Erreur :{e}")
+
+except ValueError :
+	print ("Only integers are allowed")
+
+
 
 
 
