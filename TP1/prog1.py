@@ -19,8 +19,8 @@ import fonctions as f
 a = input("Entrez le premier nombre : ")
 b = input("Entrez le second nombre : ")
 
-a = int(a)
-b = int(b)
+a = float(a)
+b = float(b)
 
 try:
     res = f.puissance(a, b)
