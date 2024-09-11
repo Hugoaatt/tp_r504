@@ -16,9 +16,20 @@ while True:
 
 import fonctions as f
 
-a = float(input("Entrez la base (a) : "))
-b = float(input("Entrez l'exposant (b) : "))
+a = input("Entrez le premier nombre : ")
+b = input("Entrez le second nombre : ")
 
-res = f.puissance(a, b)
-print(f"{a} à la puissance {b} est {res}.")
+a = int(a)
+b = int(b)
+
+try:
+    res = f.puissance(a, b)
+    print(f"Le résultat de {a} élevé à la puissance {b} est : {res}")
+except TypeError as e:
+    print(e)
+
+
+
+
+
 
