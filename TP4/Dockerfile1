@@ -11,7 +11,7 @@ RUN pip3 install mysql-connector-python
 RUN mkdir /srv/templates
 RUN pwd
 RUN whoami
-COPY app_1.py /srv/
-COPY index.html /srv/templates/index.html
+#COPY app_1.py /srv/
+#COPY index.html /srv/templates/index.html
 
 CMD ["flask","--app","/srv/app_1","run","--host=0.0.0.0"]
