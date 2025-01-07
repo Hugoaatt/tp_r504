@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 import mysql.connector
 
 app = Flask(__name__)
@@ -16,7 +16,6 @@ def index():
 	# Initialize MySQL connection
     conn = mysql.connector.connect(**db_config)
     cursor = conn.cursor() 
-
     # Sample query
     query = "SELECT * FROM myTable"
     cursor.execute(query)
@@ -28,15 +27,15 @@ def index():
     
     return render_template('index.html', data=data)
 
-@app.route('/newuser', methods-['Get', 'POST'])
-def saisie():
-	if request.form.method == 'POST':
+@app.route("/monFormulaire")
+def monForm():
+    return render_template("form.html")
+
+@app.route('/newuser',methods = ['POST', 'GET'])
+def newuser():
+	if request.method == 'POST':
 		res = request.form.get( "lname" )
-		return res.text()
-
-
+		return render_template("response.html", login=res)
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
-
